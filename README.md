@@ -10,8 +10,7 @@ class Polynomial {
 ```
 Suppose that you have a polynomial:
 ![](https://latex.codecogs.com/gif.latex?\inline&space;2x^{2}&space;&plus;&space;4x&space;&plus;&space;6)
-The coefficients are 2, 4 and 6. The last one, 6 in this case,  is also the coefficient of Suppose that you have a polynomial:
-![](https://latex.codecogs.com/gif.latex?\inline&space;x^{0}). So, In the coefficient array, you have store the constant first at index 0. Note that if stored in this way, the index becomes the power of x and the last index will be the degree. So, In this case, the coefficient array will look like:
+The coefficients are 2, 4 and 6. The last one, 6 in this case,  is also the coefficient of ![](https://latex.codecogs.com/gif.latex?\inline&space;x^{0}). So, In the coefficient array, you have store the constant first at index 0. Note that if stored in this way, the index becomes the power of x and the last index will be the degree. So, In this case, the coefficient array will look like:
 
 ```cpp
 { 6, 4, 2 }
