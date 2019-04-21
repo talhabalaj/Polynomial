@@ -1,13 +1,20 @@
 #include "Polynomial.h"
 #include <iostream>
 #include <string>
-#include <cmath>
 using namespace std;
 
 Polynomial::Polynomial()
 {
 	coeff = nullptr;
 	length = 0;
+}
+
+Polynomial::Polynomial(int length)
+{
+	this->length = length;
+	// Allocating memory
+	coeff = new double[length];
+	for (int i = 0; i < length; i++) coeff[i] = 0;
 }
 
 Polynomial::Polynomial(double a[], int length)
@@ -90,4 +97,17 @@ Polynomial::~Polynomial()
 
 double* Polynomial::getCoeffArray() {
 	return coeff;
+}
+
+Polynomial Polynomial::operator*(const Polynomial& o) {
+	int resultLength = o.length + length - 1;
+	Polynomial result(resultLength);
+	for (int i = 0; i < o.length; i++) {
+		for (int j = 0; j < length; j++) {
+			int Rcoeff = coeff[i] * o.coeff[j];
+			int power = i + j;
+			result.coeff[power] += Rcoeff;
+		}
+	}
+	return result;
 }
